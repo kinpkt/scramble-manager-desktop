@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'LINE Seed Sans TH App';
+    src: url('../fonts/LINESeedSansTH_A_Rg.ttf');
+}
+
+@font-face {
+    font-family: 'LINE Seed Sans TH App Bold';
+    src: url('../fonts/LINESeedSansTH_A.ttf');
+}
+
+.root {
+    -fx-font-family: 'LINE Seed Sans TH App';
+
+    -color-accent-emphasis: #006FEE;
+    -color-accent-mutted: #e6f1fe;
+    -color-accent-fg: #ffffff;
+
+    -color-success-emphasis: #17C964;
+    -color-success-mutted: #e8faf0;
+    -color-success-fg: #000000;
+
+    -color-danger-emphasis: #F31260;
+    -color-danger-mutted: #fde7ee;
+    -color-danger-fg: #ffffff;
+
+    -color-warning-emphasis: #F5A524;
+    -color-warning-mutted: #fef6e9;
+    -color-warning-fg: #000000;
+
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+}
+
+.button.flat-accent {
+    -fx-background-color: #006FEE33;
+    -fx-text-fill: #006FEE;
+    -fx-border-color: transparent;
+}
+.button.flat-accent:hover {
+    -fx-background-color: #006FEE4D;
+}
+
+.button.flat-success {
+    -fx-background-color: #17C96433;
+    -fx-text-fill: #17C964;
+    -fx-border-color: transparent;
+}
+.button.flat-success:hover {
+    -fx-background-color: #17C9644D;
+}
+
+.button.flat-danger {
+    -fx-background-color: #F3126033;
+    -fx-text-fill: #F31260;
+    -fx-border-color: transparent;
+}
+.button.flat-danger:hover {
+    -fx-background-color: #F312604D;
+}
+
+.button.flat-warning {
+    -fx-background-color: #F5A52433;
+    -fx-text-fill: #cf891b;
+    -fx-border-color: transparent;
+}
+.button.flat-warning:hover {
+    -fx-background-color: #F5A5244D;
+}
