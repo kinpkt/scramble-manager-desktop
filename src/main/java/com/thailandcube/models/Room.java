@@ -1,14 +1,15 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.ActivityList;
+import java.util.Collections;
+import java.util.List;
 
 public class Room {
     private int id;
     private String name;
     private String color;
-    private ActivityList activities;
+    private List<Activity> activities;
 
-    public Room(int id, String name, String color, ActivityList activities) {
+    public Room(int id, String name, String color, List<Activity> activities) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -27,7 +28,7 @@ public class Room {
         return color;
     }
 
-    public ActivityList getActivities() {
-        return activities;
+    public List<Activity> getActivities() {
+        return Collections.unmodifiableList(activities);
     }
 }

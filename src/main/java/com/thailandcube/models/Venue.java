@@ -1,6 +1,7 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.RoomList;
+import java.util.Collections;
+import java.util.List;
 
 public class Venue {
     private int id;
@@ -9,9 +10,9 @@ public class Venue {
     private int longitudeMicrodegrees;
     private String countryIso2;
     private String timezone;
-    private RoomList rooms;
+    private List<Room> rooms;
 
-    public Venue(int id, String name, int latitudeMicrodegrees, int longitudeMicrodegrees, String countryIso2, String timezone, RoomList rooms) {
+    public Venue(int id, String name, int latitudeMicrodegrees, int longitudeMicrodegrees, String countryIso2, String timezone, List<Room> rooms) {
         this.id = id;
         this.name = name;
         this.latitudeMicrodegrees = latitudeMicrodegrees;
@@ -45,7 +46,7 @@ public class Venue {
         return timezone;
     }
 
-    public RoomList getRooms() {
-        return rooms;
+    public List<Room> getRooms() {
+        return Collections.unmodifiableList(rooms);
     }
 }

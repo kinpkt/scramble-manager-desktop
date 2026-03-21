@@ -1,12 +1,14 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.RoundList;
+
+import java.util.Collections;
+import java.util.List;
 
 public class Event {
     private EventId id;
-    private RoundList rounds;
+    private List<Round> rounds;
 
-    public Event(EventId id, RoundList rounds) {
+    public Event(EventId id, List<Round> rounds) {
         this.id = id;
         this.rounds = rounds;
     }
@@ -15,7 +17,7 @@ public class Event {
         return id;
     }
 
-    public RoundList getRounds() {
-        return rounds;
+    public List<Round> getRounds() {
+        return Collections.unmodifiableList(rounds);
     }
 }

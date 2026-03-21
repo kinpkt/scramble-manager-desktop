@@ -1,19 +1,19 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.EventList;
-import com.thailandcube.repositories.PersonList;
+import java.util.Collections;
+import java.util.List;
 
 public class PublicWcif {
     private String formatVersion;
     private String id;
     private String name;
     private String shortName;
-    private PersonList persons;
-    private EventList events;
+    private List<Person> persons;
+    private List<Event> events;
     private Schedule schedule;
     private RegistrationInfo registrationInfo;
 
-    public PublicWcif(String formatVersion, String id, String name, String shortName, PersonList persons, EventList events, Schedule schedule, RegistrationInfo registrationInfo) {
+    public PublicWcif(String formatVersion, String id, String name, String shortName, List<Person> persons, List<Event> events, Schedule schedule, RegistrationInfo registrationInfo) {
         this.formatVersion = formatVersion;
         this.id = id;
         this.name = name;
@@ -40,12 +40,12 @@ public class PublicWcif {
         return shortName;
     }
 
-    public PersonList getPersons() {
-        return persons;
+    public List<Person> getPersons() {
+        return Collections.unmodifiableList(persons);
     }
 
-    public EventList getEvents() {
-        return events;
+    public List<Event> getEvents() {
+        return Collections.unmodifiableList(events);
     }
 
     public Schedule getSchedule() {

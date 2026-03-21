@@ -8,6 +8,14 @@
     src: url('../fonts/LINESeedSansTH_A.ttf');
 }
 
+* {
+    -fx-font-family: 'LINE Seed Sans TH App';
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
 .root {
     -fx-font-family: 'LINE Seed Sans TH App';
 
@@ -29,6 +37,22 @@
 
     -fx-background-radius: 12px;
     -fx-border-radius: 12px;
+}
+
+.h1 {
+    -fx-font-size: 50 !important;
+}
+
+.text-success {
+    -fx-text-fill: -color-success-emphasis;
+}
+
+.text-danger {
+    -fx-text-fill: -color-danger-emphasis;
+}
+
+.text-warning {
+    -fx-text-fill: -color-warning-emphasis;
 }
 
 .button.flat-accent {
