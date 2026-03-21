@@ -59,4 +59,13 @@ public enum EventId {
 
         throw new IllegalArgumentException("No EventId found for: " + text);
     }
+
+    public static EventId fromFullName(String fullName) {
+        for (EventId event : EventId.values()) {
+            if (fullName.equalsIgnoreCase(event.getFullName()))
+                return event;
+        }
+
+        return null;
+    }
 }
