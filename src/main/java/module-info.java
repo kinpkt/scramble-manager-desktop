@@ -1,4 +1,4 @@
-module com.thailandcube.scramblemanagerdesktop {
+module com.thailandcube {
     requires javafx.controls;
     requires javafx.fxml;
 
