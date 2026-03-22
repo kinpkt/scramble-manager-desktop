@@ -1,39 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/theme.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thailandcube.controllers.ScrambleManagerController">
+<AnchorPane fx:id="rootPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/theme.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thailandcube.controllers.ScrambleManagerController">
    <children>
-      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1280.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
+      <VBox alignment="CENTER" fillWidth="false" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="copyrightLabel1" text="Enter Your Competition ID">
+
+            <Label fx:id="copyrightLabel1" text="Scramble Organizer by kinpkt">
                <font>
-                  <Font name="LINE Seed Sans TH App Bold" size="50.0" />
+                  <Font name="LINE Seed Sans TH App Bold" size="40.0" />
                </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
+               <styleClass>
+                  <String fx:value="bold" />
+                  <String fx:value="h1" />
+               </styleClass>
             </Label>
-            <TextField fx:id="competitionIdTextField" promptText="ThailandChampionship2025">
-               <VBox.margin>
-                  <Insets bottom="25.0" top="25.0" />
-               </VBox.margin>
+
+            <VBox alignment="CENTER" prefWidth="550.0" spacing="24.0" style="-fx-background-color: transparent; -fx-padding: 20;">
+
+               <VBox spacing="8.0">
+                  <Label styleClass="bold" text="Step 1: Enter Your Competition ID" textFill="#555555">
+                     <font>
+                        <Font name="LINE Seed Sans TH App Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" spacing="12.0">
+                     <children>
+                        <TextField fx:id="competitionIdTextField" prefHeight="50.0" promptText="ThailandChampionship2025" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button minWidth="120.0" mnemonicParsing="false" onAction="#handleLoadWcifClick" prefHeight="50.0" text="Fetch WCIF">
+                           <font>
+                              <Font name="LINE Seed Sans TH App Bold" size="16.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="flat-accent" />
+                              <String fx:value="bold" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </HBox>
+               </VBox>
+
+               <HBox alignment="CENTER">
+                  <Label text="— THEN —" textFill="#999999">
+                     <font>
+                        <Font name="LINE Seed Sans TH App Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </HBox>
+
+               <VBox spacing="8.0">
+                  <Label styleClass="bold" text="Step 2: Upload Scrambles .zip File" textFill="#555555">
+                     <font>
+                        <Font name="LINE Seed Sans TH App Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="uploadScrambleButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFileUploadClick" prefHeight="50.0" text="Upload Scrambles File (.zip)">
+                     <font>
+                        <Font name="LINE Seed Sans TH App Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="flat-success" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </Button>
+               </VBox>
+            </VBox>
+
+            <Label fx:id="wcifLoadingStatusLabel" styleClass="bold" text="Ready to load data.">
                <font>
-                  <Font size="18.0" />
+                  <Font name="LINE Seed Sans TH App Bold" size="18.0" />
                </font>
-            </TextField>
-            <Button mnemonicParsing="false" onAction="#handleLoadWcifClick" styleClass="flat-accent" text="Load WCIF">
+            </Label>
+            <Button fx:id="downloadOrganizedZipButton" mnemonicParsing="false" onAction="#handleDownloadOrganizedZip" text="Download Organized ZIP">
                <font>
-                  <Font name="LINE Seed Sans TH App Bold" size="12.0" />
+                  <Font name="LINE Seed Sans TH App Bold" size="20.0" />
                </font>
+               <styleClass>
+                  <String fx:value="flat-accent" />
+                  <String fx:value="bold" />
+               </styleClass>
             </Button>
+
          </children>
       </VBox>
    </children>
