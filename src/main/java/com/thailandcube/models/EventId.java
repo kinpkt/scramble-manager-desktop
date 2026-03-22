@@ -29,6 +29,28 @@ public enum EventId {
         return id;
     }
 
+    public String getFullName() {
+        return switch (this) {
+            case _333 -> "3x3x3 Cube";
+            case _222 -> "2x2x2 Cube";
+            case _444 -> "4x4x4 Cube";
+            case _555 -> "5x5x5 Cube";
+            case _666 -> "6x6x6 Cube";
+            case _777 -> "7x7x7 Cube";
+            case _333BF -> "3x3x3 Blindfolded";
+            case _333FM -> "3x3x3 Fewest Moves";
+            case _333OH -> "3x3x3 One-Handed";
+            case CLOCK -> "Clock";
+            case MINX -> "Megaminx";
+            case PYRAM -> "Pyraminx";
+            case SKEWB -> "Skewb";
+            case SQ1 -> "Square-1";
+            case _444BF -> "4x4x4 Blindfolded";
+            case _555BF -> "5x5x5 Blindfolded";
+            case _333MBF -> "3x3x3 Multiple Blindfolded";
+        };
+    }
+
     public static EventId fromString(String text) {
         for (EventId event : EventId.values()) {
             if (event.id.equalsIgnoreCase(text))
@@ -36,5 +58,14 @@ public enum EventId {
         }
 
         throw new IllegalArgumentException("No EventId found for: " + text);
+    }
+
+    public static EventId fromFullName(String fullName) {
+        for (EventId event : EventId.values()) {
+            if (fullName.equalsIgnoreCase(event.getFullName()))
+                return event;
+        }
+
+        return null;
     }
 }

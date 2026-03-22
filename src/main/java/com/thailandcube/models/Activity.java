@@ -1,8 +1,8 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.ActivityList;
-
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
 public class Activity {
     private int id;
@@ -10,9 +10,9 @@ public class Activity {
     private String activityCode;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private ActivityList childActivities;
+    private List<Activity> childActivities;
 
-    public Activity(int id, String name, String activityCode, LocalDateTime startTime, LocalDateTime endTime, ActivityList childActivities) {
+    public Activity(int id, String name, String activityCode, LocalDateTime startTime, LocalDateTime endTime, List<Activity> childActivities) {
         this.id = id;
         this.name = name;
         this.activityCode = activityCode;
@@ -41,7 +41,7 @@ public class Activity {
         return endTime;
     }
 
-    public ActivityList getChildActivities() {
-        return childActivities;
+    public List<Activity> getChildActivities() {
+        return Collections.unmodifiableList(childActivities);
     }
 }

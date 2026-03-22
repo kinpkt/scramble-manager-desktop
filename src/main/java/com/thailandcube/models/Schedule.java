@@ -1,15 +1,15 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.VenueList;
-
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class Schedule {
     private Date startDate;
     private int numberOfDays;
-    private VenueList venues;
+    private List<Venue> venues;
 
-    public Schedule(Date startDate, int numberOfDays, VenueList venues) {
+    public Schedule(Date startDate, int numberOfDays, List<Venue> venues) {
         this.startDate = startDate;
         this.numberOfDays = numberOfDays;
         this.venues = venues;
@@ -23,7 +23,7 @@ public class Schedule {
         return numberOfDays;
     }
 
-    public VenueList getVenues() {
-        return venues;
+    public List<Venue> getVenues() {
+        return Collections.unmodifiableList(venues);
     }
 }

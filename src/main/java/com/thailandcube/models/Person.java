@@ -1,6 +1,7 @@
 package com.thailandcube.models;
 
-import com.thailandcube.repositories.RoleList;
+import java.util.Collections;
+import java.util.List;
 
 class Avatar {
     private String url;
@@ -29,7 +30,19 @@ public class Person {
     private String gender;
     private Registration registration;
     private Avatar avatar;
-    private RoleList roles;
+    private List<Role> roles;
+
+    public Person(String name, int wcaUserId, String wcaId, int registrantId, String countryIso2, String gender, Registration registration, Avatar avatar, List<Role> roles) {
+        this.name = name;
+        this.wcaUserId = wcaUserId;
+        this.wcaId = wcaId;
+        this.registrantId = registrantId;
+        this.countryIso2 = countryIso2;
+        this.gender = gender;
+        this.registration = registration;
+        this.avatar = avatar;
+        this.roles = roles;
+    }
 
     public String getName() {
         return name;
@@ -63,7 +76,7 @@ public class Person {
         return avatar;
     }
 
-    public RoleList getRoles() {
-        return roles;
+    public List<Role> getRoles() {
+        return Collections.unmodifiableList(roles);
     }
 }
