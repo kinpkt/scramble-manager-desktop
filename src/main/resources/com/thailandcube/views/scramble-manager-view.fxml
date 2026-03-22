@@ -14,7 +14,7 @@
       <VBox alignment="CENTER" fillWidth="false" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
 
-            <Label fx:id="copyrightLabel1" text="Load Competition Data">
+            <Label fx:id="copyrightLabel1" text="Scramble Organizer by kinpkt">
                <font>
                   <Font name="LINE Seed Sans TH App Bold" size="40.0" />
                </font>
@@ -27,7 +27,7 @@
             <VBox alignment="CENTER" prefWidth="550.0" spacing="24.0" style="-fx-background-color: transparent; -fx-padding: 20;">
 
                <VBox spacing="8.0">
-                  <Label styleClass="bold" text="Step 1: Fetch WCIF from WCA API" textFill="#555555">
+                  <Label styleClass="bold" text="Step 1: Enter Your Competition ID" textFill="#555555">
                      <font>
                         <Font name="LINE Seed Sans TH App Bold" size="16.0" />
                      </font>
